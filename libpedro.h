@@ -1,3 +1,8 @@
+// Materia: Programación I, Paralelo 4
+// Grupo: 6
+// Autor: Pedro Enrique Mendez Verastegui
+// Fecha creación: 17-06-2026
+// Nombre del PROYECTO FINAL: Sistema de Gestion Surtidor Volcan 
 #ifndef LIBPEDRO_H
 #define LIBPEDRO_H
 

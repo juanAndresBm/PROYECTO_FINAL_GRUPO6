@@ -1,3 +1,8 @@
+// Materia: Programación I, Paralelo 4
+// Grupo: 6
+// Autor: KEVIN
+// Fecha creación: 19-06-2026
+// Nombre del PROYECTO FINAL: Sistema de Gestion Surtidor Volcan 
 #ifndef LIBKEVIN_H
 #define LIBKEVIN_H
 

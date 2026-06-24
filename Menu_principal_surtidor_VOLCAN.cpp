@@ -1,3 +1,8 @@
+// Materia: Programación I, Paralelo 4
+// Grupo: 6
+// Autor: Juan, Pedro, Kevin
+// Fecha creación: 19-06-2026
+// Nombre del PROYECTO FINAL: Sistema de Gestion Surtidor Volcan 
 #include <iostream>
 #include <cstdlib>
 #include <cstring>

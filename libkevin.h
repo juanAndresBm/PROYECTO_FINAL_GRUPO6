@@ -10,7 +10,7 @@
 #include <cstdlib>
 #include <cstring>
 #include <fstream>
-
+#include "libpedro.h"
 
 using namespace std;
 
@@ -44,64 +44,95 @@ struct CierreTurno {
 
 void libkevin_guardarAsistencias(ControlAsistencia asistencias[], int totalAsistencias) {
     ofstream arch("asistencias.txt");
-    if (!arch) return;
-    arch << totalAsistencias << endl;
-    for (int i = 0; i < totalAsistencias; i++) {
-        arch << asistencias[i].usuario << endl << asistencias[i].fecha << endl << asistencias[i].horaEntrada << endl << asistencias[i].horaSalida << endl;
+
+    if (arch) {
+        arch << totalAsistencias << endl;
+        for (int i = 0; i < totalAsistencias; i++) {
+            arch << asistencias[i].usuario << endl
+                 << asistencias[i].fecha << endl
+                 << asistencias[i].horaEntrada << endl
+                 << asistencias[i].horaSalida << endl;
+        }
+        arch.close();
     }
-    arch.close();
 }
 
 void libkevin_cargarAsistencias(ControlAsistencia asistencias[], int& totalAsistencias) {
     ifstream arch("asistencias.txt");
-    if (!arch) return;
-    arch >> totalAsistencias;
-    for (int i = 0; i < totalAsistencias; i++) {
-        arch >> asistencias[i].usuario >> asistencias[i].fecha >> asistencias[i].horaEntrada >> asistencias[i].horaSalida;
+
+    if (arch) {
+        arch >> totalAsistencias;
+        for (int i = 0; i < totalAsistencias; i++) {
+            arch >> asistencias[i].usuario
+                 >> asistencias[i].fecha
+                 >> asistencias[i].horaEntrada
+                 >> asistencias[i].horaSalida;
+        }
+        arch.close();
     }
-    arch.close();
 }
 
 void libkevin_guardarCierres(CierreTurno cierres[], int totalCierres) {
     ofstream arch("cierres.txt");
-    if (!arch) return;
-    arch << totalCierres << endl;
-    for (int i = 0; i < totalCierres; i++) {
-        arch << cierres[i].usuario << endl << cierres[i].dineroEstimado << endl << cierres[i].dineroReal << endl << cierres[i].diferencia << endl;
+
+    if (arch) {
+        arch << totalCierres << endl;
+        for (int i = 0; i < totalCierres; i++) {
+            arch << cierres[i].usuario << endl
+                 << cierres[i].dineroEstimado << endl
+                 << cierres[i].dineroReal << endl
+                 << cierres[i].diferencia << endl;
+        }
+        arch.close();
     }
-    arch.close();
 }
 
 void libkevin_cargarCierres(CierreTurno cierres[], int& totalCierres) {
     ifstream arch("cierres.txt");
-    if (!arch) return;
-    arch >> totalCierres;
-    for (int i = 0; i < totalCierres; i++) {
-        arch >> cierres[i].usuario >> cierres[i].dineroEstimado >> cierres[i].dineroReal >> cierres[i].diferencia;
+
+    if (arch) {
+        arch >> totalCierres;
+        for (int i = 0; i < totalCierres; i++) {
+            arch >> cierres[i].usuario
+                 >> cierres[i].dineroEstimado
+                 >> cierres[i].dineroReal
+                 >> cierres[i].diferencia;
+        }
+        arch.close();
     }
-    arch.close();
 }
 
 void libkevin_guardarOperadores(Operador operadores[], int totalOperadores) {
     ofstream arch("operadores.txt");
-    if (!arch) return;
-    arch << totalOperadores << endl;
-    for (int i = 0; i < totalOperadores; i++) {
-        arch << operadores[i].usuario << endl << operadores[i].clave << endl << operadores[i].esAdministrador << endl << operadores[i].activo << endl << operadores[i].bombaAsignada << endl;
+
+    if (arch) {
+        arch << totalOperadores << endl;
+        for (int i = 0; i < totalOperadores; i++) {
+            arch << operadores[i].usuario << endl
+                 << operadores[i].clave << endl
+                 << operadores[i].esAdministrador << endl
+                 << operadores[i].activo << endl
+                 << operadores[i].bombaAsignada << endl;
+        }
+        arch.close();
     }
-    arch.close();
 }
 
 void libkevin_cargarOperadores(Operador operadores[], int& totalOperadores) {
     ifstream arch("operadores.txt");
-    if (!arch) return;
-    arch >> totalOperadores;
-    for (int i = 0; i < totalOperadores; i++) {
-        arch >> operadores[i].usuario >> operadores[i].clave >> operadores[i].esAdministrador >> operadores[i].activo >> operadores[i].bombaAsignada;
-    }
-    arch.close();
-}
 
+    if (arch) {
+        arch >> totalOperadores;
+        for (int i = 0; i < totalOperadores; i++) {
+            arch >> operadores[i].usuario
+                 >> operadores[i].clave
+                 >> operadores[i].esAdministrador
+                 >> operadores[i].activo
+                 >> operadores[i].bombaAsignada;
+        }
+        arch.close();
+    }
+}
 void libkevin_registrarEntrada(ControlAsistencia asistencias[], int& totalAsistencias, char usuarioActivo[]) {
     system("cls");
     cout << "=========================================" << endl;

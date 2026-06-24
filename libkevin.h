@@ -1,7 +1,7 @@
-// Materia: Programación I, Paralelo 4
+// Materia: ProgramaciÃ³n I, Paralelo 4
 // Grupo: 6
 // Autor: KEVIN
-// Fecha creación: 19-06-2026
+// Fecha creaciÃ³n: 19-06-2026
 // Nombre del PROYECTO FINAL: Sistema de Gestion Surtidor Volcan 
 #ifndef LIBKEVIN_H
 #define LIBKEVIN_H
@@ -10,7 +10,7 @@
 #include <cstdlib>
 #include <cstring>
 #include <fstream>
-#include "libpedro.h"
+
 
 using namespace std;
 
